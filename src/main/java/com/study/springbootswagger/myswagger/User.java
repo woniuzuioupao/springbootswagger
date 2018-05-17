@@ -9,11 +9,11 @@ import java.util.List;
 public class User implements Serializable {
 
     private static final long serialVersionUID = 7440736786435014032L;
-    @ApiModelProperty(value = "user的id",name = "id")
+    @ApiModelProperty(value = "user的id",name = "id",example = "1")
     private String id;
-    @ApiModelProperty(value = "user的name",name = "name")
+    @ApiModelProperty(value = "user的name",name = "name",example = "hanyan")
     private String name;
-    @ApiModelProperty(value ="user的hobby列表",name = "hobbyList")
+    @ApiModelProperty(value ="user的hobby列表",name = "hobbyList",example ="['看書','畫畫']")
     List<String> hobbyList;
 
     public String getId() {
@@ -37,6 +37,12 @@ public class User implements Serializable {
     }
 
     public void setHobbyList(List<String> hobbyList) {
+        this.hobbyList = hobbyList;
+    }
+
+    public User(String id, String name, List<String> hobbyList) {
+        this.id = id;
+        this.name = name;
         this.hobbyList = hobbyList;
     }
 }
