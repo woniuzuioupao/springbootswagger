@@ -6,21 +6,24 @@ import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.ws.rs.PathParam;
 
 @Api(value = "基本類型的api")
 @RequestMapping("common")
 @RestController
 public class CommonApi {
 
-    @RequestMapping(value = "addString",method = RequestMethod.POST)
-    @ApiOperation(value = "增加字符串",notes = "note:此為增加字符串接口")
-    @ApiImplicitParams({
+    /*@ApiImplicitParams({
             @ApiImplicitParam(value = "入參text",name = "text",paramType = "String")
-    })
-    public String addString(String text){
+    })*/
+    @RequestMapping(value = "addString",method = RequestMethod.GET)
+    @ApiOperation(value = "增加字符串",notes = "note:此為增加字符串接口")
+    public String addString(@PathVariable String text){
         return "增加字符串成功";
     }
     @RequestMapping(value = "delString",method = RequestMethod.DELETE)

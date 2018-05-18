@@ -1,3 +1,4 @@
+/*
 package com.study.springbootswagger.myswagger;
 
 import io.swagger.annotations.Api;
@@ -24,3 +25,4 @@ public class api {
     }
 
 }
+*/
